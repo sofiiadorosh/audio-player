@@ -50,7 +50,7 @@ function play() {
   controls.singer.textContent = current.singer;
   controls.song.textContent = current.song;
   controls.cover.src = `./assets/covers/${current.cover}.jpg`;
-  controls.background.style.backgroundImage = `url('https://anenkosofi.github.io/audio-player/assets/covers/${current.cover}.jpg')`;
+  controls.background.firstElementChild.src = `./assets/covers/${current.cover}.jpg`;
   controls.progress.style.width = 0;
 
   if (currentTime) {
@@ -172,7 +172,7 @@ function load() {
   controls.singer.textContent = current.singer;
   controls.song.textContent = current.song;
   controls.cover.src = `./assets/covers/${current.cover}.jpg`;
-  controls.background.style.backgroundImage = `url('https://anenkosofi.github.io/audio-player/assets/covers/${current.cover}.jpg')`;
+  controls.background.firstElementChild.src = `./assets/covers/${current.cover}.jpg`;
   controls.progress.style.width = 0;
 
   const currentTime = audio.currentTime;
