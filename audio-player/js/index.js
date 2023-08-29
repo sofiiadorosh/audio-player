@@ -151,7 +151,7 @@ function seekUpdate() {
     controls.time.firstElementChild.textContent = `${startMinutes}:${startSeconds
       .toFixed()
       .padStart(2, "0")}`;
-    controls.time.lastElementChild.textContent = `-${endMinutes}:${endSeconds
+    controls.time.lastElementChild.textContent = `${endMinutes}:${endSeconds
       .toFixed()
       .padStart(2, "0")}`;
   }
