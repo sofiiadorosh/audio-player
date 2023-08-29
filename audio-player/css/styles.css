@@ -1,0 +1,173 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  background-color: #212121;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+/* ___________________________ */
+.audio {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../assets/covers/happy.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  filter: blur(8px);
+}
+.container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.audio__player {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 400px;
+  max-height: 608px;
+  width: 100%;
+  background-color: #212121;
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.audio__pic {
+  max-width: 400px;
+  max-height: 400px;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.audio__cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+audio {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.audio__container {
+  padding: 24px 16px;
+  color: #f5f5f5;
+}
+
+.audio__singer {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.33;
+}
+
+.audio__song {
+  margin-bottom: 16px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.33;
+}
+
+.audio__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.audio__track {
+  width: 100%;
+  height: 8px;
+  margin-bottom: 8px;
+  background-color: rgba(245, 245, 245, 0.5);
+  border-radius: 4px;
+}
+
+.audio__track_active {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 44%;
+  height: 8px;
+  margin-bottom: 8px;
+  background-color: rgba(245, 245, 245, 1);
+  border-radius: 4px;
+}
+
+.audio__time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.33;
+}
+
+.audio__controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.audio__control-wrapper {
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+}
+
+.audio__icon {
+  width: 100%;
+  height: 100%;
+}

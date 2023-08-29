@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Player</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
+  </head>
+  <body>
+    <div class="audio">
+      <div class="container">
+      </div>
+    </div>
+    <section class="audio__player">
+      <div class="audio__pic">
+        <img src="./assets/covers/happy.jpg" alt="Album cover" class="audio__cover">
+      </div>
+      <div class="audio__container">
+        <h1 class="audio__singer">Клавдія Петрівна</h1>
+        <h2 class="audio__song">Щаслива</h2>
+        <div class="audio__content">
+          <div class="audio__track"></div>
+          <div class="audio__track_active"></div>
+          <div class="audio__time">
+            <span>0:00</span>
+            <span>-3:44</span>
+          </div>
+          <div class="audio__controls">
+            <div class="audio__control-wrapper">
+              <img src="./assets/icons/backward.svg" alt="Backward" class="audio__icon">
+            </div>
+            <div class="audio__control-wrapper">
+              <img src="./assets/icons/play.svg" alt="Play" class="audio__icon">
+            </div>
+            <div class="audio__control-wrapper">
+              <img src="./assets/icons/forward.svg" alt="Forward" class="audio__icon">
+            </div>
+          </div>
+        </div>
+      </div>
+      <audio src="./assets/audio/KP_Happy.mp3" controls preload="auto"></audio>
+    </section>
+  </body>
+</html>
