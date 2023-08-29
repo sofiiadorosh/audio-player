@@ -85,7 +85,8 @@ p {
 @media screen and (min-width: 420px) {
   .audio__player {
     max-width: 400px;
-    height: 628px;
+    height: 678px;
+    gap: 0;
   }
 }
 
@@ -153,15 +154,37 @@ audio {
   border-radius: 4px;
 }
 
-.audio__track_active {
+.audio__track_progress {
   position: absolute;
   top: 0;
   left: 0;
+  max-width: 360px;
   width: 0;
   height: 8px;
-  margin-bottom: 8px;
   background-color: rgba(245, 245, 245, 1);
   border-radius: 4px;
+}
+
+.audio__track_active {
+  position: absolute;
+  top: -2px;
+  left: -4px;
+  width: 360px;
+  height: 8px;
+  background-color: transparent;
+  border-radius: 4px;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.audio__track_active::-webkit-slider-thumb {
+  width: 16px;
+  height: 16px;
+  background-color: #f5f5f5;
+  border-radius: 50%;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
 }
 
 .audio__time {
@@ -179,6 +202,7 @@ audio {
   justify-content: center;
   align-items: center;
   gap: 12px;
+  margin-bottom: 16px;
 }
 
 .audio__control-wrapper {
@@ -186,6 +210,7 @@ audio {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-shrink: 0;
   width: 64px;
   height: 64px;
   padding: 0;
@@ -246,4 +271,63 @@ audio {
 
 .audio__control-backward:active .audio__icon-backward {
   transform: scale(0.6);
+}
+
+#volume {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+}
+
+.audio__volume-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+}
+.audio__volume-container {
+  position: relative;
+  width: 100%;
+}
+
+.audio__volume {
+  width: 100%;
+  height: 8px;
+  background-color: rgba(245, 245, 245, 0.5);
+  border-radius: 4px;
+}
+
+.audio__volume_level {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 280px;
+  width: 0;
+  height: 8px;
+  background-color: rgba(245, 245, 245, 1);
+  border-radius: 4px;
+}
+
+.audio__track_volume {
+  position: absolute;
+  top: -2px;
+  left: -4px;
+  width: 280px;
+  height: 8px;
+  background-color: transparent;
+  border-radius: 4px;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.audio__track_volume::-webkit-slider-thumb {
+  width: 16px;
+  height: 16px;
+  background-color: #f5f5f5;
+  border-radius: 50%;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
 }

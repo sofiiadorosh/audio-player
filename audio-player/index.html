@@ -24,7 +24,8 @@
         <h2 class="audio__song">Щаслива</h2>
         <div class="audio__content">
           <div class="audio__track"></div>
-          <div class="audio__track_active"></div>
+          <div class="audio__track_progress"></div>
+          <input type="range" min="1" max="100" value="0" class="audio__track_active">
           <div class="audio__time">
             <span>0:00</span>
             <span>--:--</span>
@@ -40,6 +41,19 @@
             <button type="button" class="audio__control-wrapper audio__control-forward">
               <img src="./assets/icons/forward.svg" alt="Forward" class="audio__icon audio__icon-forward">
             </button>
+          </div>
+          <div id="volume">
+            <div class="audio__volume-wrapper">
+              <img src="./assets/icons/volume-min.svg" alt="Volume min" class="audio__icon">
+            </div>
+            <div class="audio__volume-container">
+              <div class="audio__volume"></div>
+              <div class="audio__volume_level"></div>
+              <input type="range" min="1" max="100" value="20" class="audio__track_volume">
+            </div>
+            <div class="audio__volume-wrapper">
+              <img src="./assets/icons/volume-max.svg" alt="Volume max" class="audio__icon">
+            </div>
           </div>
         </div>
       </div>
