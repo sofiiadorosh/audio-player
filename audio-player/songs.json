@@ -1,0 +1,26 @@
+[
+  {
+    "singer": "Клавдія Петрівна",
+    "song": "Щаслива",
+    "track": "KP_Happy",
+    "cover": "happy"
+  },
+  {
+    "singer": "Jubël",
+    "song": "4AM",
+    "track": "Jubel_4AM",
+    "cover": "4am"
+  },
+  {
+    "singer": "Kygo",
+    "song": "Freeze",
+    "track": "Kygo_Freeze",
+    "cover": "freeze"
+  },
+  {
+    "singer": "Elderbrook",
+    "song": "Numb",
+    "track": "Elderbrook_Numb",
+    "cover": "numb"
+  }
+]

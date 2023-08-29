@@ -27,22 +27,24 @@
           <div class="audio__track_active"></div>
           <div class="audio__time">
             <span>0:00</span>
-            <span>-3:44</span>
+            <span>--:--</span>
           </div>
           <div class="audio__controls">
-            <div class="audio__control-wrapper">
-              <img src="./assets/icons/backward.svg" alt="Backward" class="audio__icon">
-            </div>
-            <div class="audio__control-wrapper">
-              <img src="./assets/icons/play.svg" alt="Play" class="audio__icon">
-            </div>
-            <div class="audio__control-wrapper">
-              <img src="./assets/icons/forward.svg" alt="Forward" class="audio__icon">
-            </div>
+            <button type="button" class="audio__control-wrapper audio__control-backward">
+              <img src="./assets/icons/backward.svg" alt="Backward" class="audio__icon audio__icon-backward">
+            </button>
+            <button type="button" class="audio__control-wrapper audio__control-play">
+              <img src="./assets/icons/play.svg" alt="Play" class="audio__icon audio__play">
+              <img src="./assets/icons/pause.svg" alt="Pause" class="audio__icon audio__icon_hidden audio__pause">
+            </button>
+            <button type="button" class="audio__control-wrapper audio__control-forward">
+              <img src="./assets/icons/forward.svg" alt="Forward" class="audio__icon audio__icon-forward">
+            </button>
           </div>
         </div>
       </div>
       <audio src="./assets/audio/KP_Happy.mp3" controls preload="auto"></audio>
     </section>
+    <script src="./js/index.js" type="module"></script>
   </body>
 </html>
