@@ -15,7 +15,7 @@ const controls = {
   level: document.querySelector(".audio__volume_level"),
 };
 
-let audio;
+const audio = document.querySelector("audio");
 let currentIndex = 0;
 let isPlaying = false;
 let isPrev = false;
@@ -26,8 +26,6 @@ let currentTime = 0;
 initializeAudioPlayer();
 
 function initializeAudioPlayer() {
-  audio = new Audio();
-
   load();
 
   controls.play.addEventListener("click", play);
