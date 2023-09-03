@@ -11,55 +11,85 @@
     <link rel="stylesheet" href="./css/styles.css">
   </head>
   <body>
-    <div class="audio">
-      <img id="background" src="./assets/covers/happy.jpg" alt="Background">
-      <div class="container">
+    <main>
+      <div class="audio">
+        <img id="background" src="./assets/covers/happy.jpg" alt="Background">
       </div>
-    </div>
-    <section class="audio__player">
-      <div class="audio__pic">
-        <img src="./assets/covers/happy.jpg" alt="Album cover" class="audio__cover">
-      </div>
-      <div class="audio__container">
-        <h1 class="audio__singer">Клавдія Петрівна</h1>
-        <h2 class="audio__song">Щаслива</h2>
-        <div class="audio__content">
-          <div class="audio__track"></div>
-          <div class="audio__track_progress"></div>
-          <input type="range" min="1" max="100" value="0" class="audio__track_active">
-          <div class="audio__time">
-            <span>0:00</span>
-            <span>--:--</span>
+      <div class="audio__overlay">
+        <header class="header">
+          <div class="container">
+            <h1>Welcome to Audio Player 🎧</h1>
           </div>
-          <div class="audio__controls">
-            <button type="button" class="audio__control-wrapper audio__control-backward">
-              <img src="./assets/icons/backward.svg" alt="Backward" class="audio__icon audio__icon-backward">
-            </button>
-            <button type="button" class="audio__control-wrapper audio__control-play">
-              <img src="./assets/icons/play.svg" alt="Play" class="audio__icon audio__play">
-              <img src="./assets/icons/pause.svg" alt="Pause" class="audio__icon audio__icon_hidden audio__pause">
-            </button>
-            <button type="button" class="audio__control-wrapper audio__control-forward">
-              <img src="./assets/icons/forward.svg" alt="Forward" class="audio__icon audio__icon-forward">
-            </button>
-          </div>
-          <div id="volume">
-            <div class="audio__volume-wrapper">
-              <img src="./assets/icons/volume-min.svg" alt="Volume min" class="audio__icon">
+        </header>
+        <div class="container" id="container">
+          <section class="audio__player">
+            <div class="audio__pic">
+              <img src="./assets/covers/happy.jpg" alt="Album cover" class="audio__cover">
             </div>
-            <div class="audio__volume-container">
-              <div class="audio__volume"></div>
-              <div class="audio__volume_level"></div>
-              <input type="range" min="1" max="100" value="20" class="audio__track_volume">
+            <div class="audio__container">
+              <h2 class="audio__singer">Клавдія Петрівна</h2>
+              <h2 class="audio__song">Щаслива</h2>
+              <div class="audio__content">
+                <div class="audio__track"></div>
+                <div class="audio__track_progress"></div>
+                <input type="range" min="1" max="100" value="0" class="audio__track_active">
+                <div class="audio__time">
+                  <span>0:00</span>
+                  <span>--:--</span>
+                </div>
+                <div class="audio__controls">
+                  <button type="button" class="audio__control-wrapper audio__control-backward">
+                    <img src="./assets/icons/backward.svg" alt="Backward" class="audio__icon audio__icon-backward">
+                  </button>
+                  <button type="button" class="audio__control-wrapper audio__control-play">
+                    <img src="./assets/icons/play.svg" alt="Play" class="audio__icon audio__play">
+                    <img src="./assets/icons/pause.svg" alt="Pause" class="audio__icon audio__icon_hidden audio__pause">
+                  </button>
+                  <button type="button" class="audio__control-wrapper audio__control-forward">
+                    <img src="./assets/icons/forward.svg" alt="Forward" class="audio__icon audio__icon-forward">
+                  </button>
+                </div>
+                <div id="volume">
+                  <div class="audio__volume-wrapper">
+                    <img src="./assets/icons/volume-min.svg" alt="Volume min" class="audio__icon">
+                  </div>
+                  <div class="audio__volume-container">
+                    <div class="audio__volume"></div>
+                    <div class="audio__volume_level"></div>
+                    <input type="range" min="1" max="100" value="20" class="audio__track_volume">
+                  </div>
+                  <div class="audio__volume-wrapper">
+                    <img src="./assets/icons/volume-max.svg" alt="Volume max" class="audio__icon">
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="audio__volume-wrapper">
-              <img src="./assets/icons/volume-max.svg" alt="Volume max" class="audio__icon">
-            </div>
-          </div>
+            <audio src="./assets/audio/KP_Happy.mp3"></audio>
+          </section>
         </div>
+        <footer class="footer">
+          <div class="container">
+            <ul class="footer__list">
+              <li class="footer__item">
+                <a class="footer__link" href="https://github.com/anenkosofi">
+                  <svg width="48" height="48">
+                    <use href="./assets/sprite.svg#icon-github"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="footer__item">
+                <a class="footer__link" href="https://rs.school/js/">
+                  <svg width="120" height="40">
+                    <use href="./assets/sprite.svg#icon-rs_school_js"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+            <p class="footer__rights">&#169; 2023 Anenko. All rights reserved</p>
+          </div>
+        </footer>
       </div>
-      <audio src="./assets/audio/KP_Happy.mp3"></audio>
-    </section>
+    </main>
     <script src="./js/index.js" type="module"></script>
   </body>
 </html>

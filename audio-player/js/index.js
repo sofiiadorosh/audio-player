@@ -15,7 +15,7 @@ const controls = {
   level: document.querySelector(".audio__volume_level"),
 };
 
-const audio = document.querySelector("audio");
+const audio = new Audio();
 let currentIndex = 0;
 let isPlaying = false;
 let isPrev = false;
@@ -23,22 +23,19 @@ let isNext = false;
 let intervalId = null;
 let currentTime = 0;
 
-initializeAudioPlayer();
-
-function initializeAudioPlayer() {
+window.addEventListener("load", () => {
   load();
-
-  controls.play.addEventListener("click", play);
-  controls.play.addEventListener("touchend", play);
-  controls.backward.addEventListener("click", playPrev);
-  controls.forward.addEventListener("click", playNext);
-  controls.track.addEventListener("input", seekTo);
-  controls.volume.addEventListener("input", setVolume);
-  audio.addEventListener("timeupdate", seekUpdate);
-  audio.addEventListener("ended", () => {
-    pause();
-  });
-}
+});
+controls.play.addEventListener("click", play);
+controls.play.addEventListener("touchend", play);
+controls.backward.addEventListener("click", playPrev);
+controls.forward.addEventListener("click", playNext);
+controls.track.addEventListener("input", seekTo);
+controls.volume.addEventListener("input", setVolume);
+audio.addEventListener("timeupdate", seekUpdate);
+audio.addEventListener("ended", () => {
+  pause();
+});
 
 function play() {
   if (isPlaying && !isPrev && !isNext) {
@@ -154,6 +151,9 @@ function seekUpdate() {
     controls.time.lastElementChild.textContent = `${endMinutes}:${endSeconds
       .toFixed()
       .padStart(2, "0")}`;
+  }
+  if (audio.currentTime >= audio.duration) {
+    playNext();
   }
 }
 
