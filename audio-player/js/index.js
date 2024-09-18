@@ -1,5 +1,3 @@
-import songs from "../songs.json" assert { type: "json" };
-
 const controls = {
   play: document.querySelector(".audio__control-play"),
   backward: document.querySelector(".audio__control-backward"),
@@ -16,6 +14,7 @@ const controls = {
 };
 
 const audio = new Audio();
+let songs = [];
 let currentIndex = 0;
 let isPlaying = false;
 let isPrev = false;
@@ -36,6 +35,20 @@ audio.addEventListener("timeupdate", seekUpdate);
 audio.addEventListener("ended", () => {
   pause();
 });
+
+function getSongs() {
+  return fetch("./songs.json")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then((data) => {
+      songs = data;
+    })
+    .catch((error) => console.error("Unable to fetch data:", error));
+}
 
 function play() {
   if (isPlaying && !isPrev && !isNext) {
@@ -166,21 +179,23 @@ function setVolume() {
 }
 
 function load() {
-  const current = songs[currentIndex];
+  getSongs().then(() => {
+    const current = songs[currentIndex];
 
-  audio.src = `./assets/audio/${current.track}.mp3`;
-  controls.singer.textContent = current.singer;
-  controls.song.textContent = current.song;
-  controls.cover.src = `./assets/covers/${current.cover}.jpg`;
-  controls.background.firstElementChild.src = `./assets/covers/${current.cover}.jpg`;
-  controls.progress.style.width = 0;
+    audio.src = `./assets/audio/${current.track}.mp3`;
+    controls.singer.textContent = current.singer;
+    controls.song.textContent = current.song;
+    controls.cover.src = `./assets/covers/${current.cover}.jpg`;
+    controls.background.firstElementChild.src = `./assets/covers/${current.cover}.jpg`;
+    controls.progress.style.width = 0;
 
-  const currentTime = audio.currentTime;
-  const duration = audio.duration;
-  const progressPercent = (currentTime / duration) * 100;
-  controls.progress.style.width = `${progressPercent}%`;
+    const currentTime = audio.currentTime;
+    const duration = audio.duration;
+    const progressPercent = (currentTime / duration) * 100;
+    controls.progress.style.width = `${progressPercent}%`;
 
-  const point = controls.volume.value / 100;
-  audio.volume = point;
-  controls.level.style.width = `${controls.volume.value}%`;
+    const point = controls.volume.value / 100;
+    audio.volume = point;
+    controls.level.style.width = `${controls.volume.value}%`;
+  });
 }
